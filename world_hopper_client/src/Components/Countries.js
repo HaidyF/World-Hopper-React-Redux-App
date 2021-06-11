@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 
-class CountryContainer extends Component {
+class Countries extends Component {
+    state = {
+        name: '',
+        flag: ''
+    }
+
     render() {
         return (
             <div>
@@ -10,4 +15,4 @@ class CountryContainer extends Component {
     }
 }
 
-export default CountryContainer;
+export default Countries;

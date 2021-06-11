@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Countries extends Component {
+class Country extends Component {
     state = {
         name: '',
         flag: '',
@@ -20,4 +20,4 @@ class Countries extends Component {
     }
 }
 
-export default Countries;
+export default Country;
