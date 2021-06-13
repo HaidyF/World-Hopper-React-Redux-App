@@ -1,23 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
+import {useParams} from "react-router-dom";
+import {CountriesContainer} from './CountriesContainer'
 
-class Country extends Component {
-    state = {
-        name: '',
-        flag: '',
-        capital: '',
-        region: '',
-        population: '',
-        timezones: '',
-        language: ''
-    }
-
-    render() {
+function Country() {
+    const { name } = useParams();
+    // state = {
+    //     name: '',
+    //     flag: '',
+    //     capital: '',
+    //     region: '',
+    //     population: '',
+    //     timezones: '',
+    //     language: ''
+    // }
         return (
             <div>
-                
+                {name}
             </div>
         );
-    }
 }
 
 export default Country;
