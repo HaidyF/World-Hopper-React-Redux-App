@@ -3,11 +3,14 @@ import logo from './logo.svg';
 import './App.css';
 import CountriesContainer from './Components/CountriesContainer'
 import Country from './Components/Country'
+import Home from './Components/Home'
 import { BrowserRouter as Router, Route, Switch, useParams} from 'react-router-dom';
+import NavBar from './Components/NavBar/NavBar';
 
 function App() {
   return (
     <div className="App">
+        <NavBar />
     <Router>
       <header className="App-header">
       <Switch>
@@ -18,7 +21,7 @@ function App() {
         <Country></Country>
       </Route>
       <Route path="">
-        Home
+        <Home></Home>
       </Route>
         </Switch>
       </header>
