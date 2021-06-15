@@ -2,16 +2,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchCountries } from '../Actions/CountriesActions'
 import { Link } from 'react-router-dom'
+import CountryDetail from './CountryDetail'
 class CountriesContainer extends Component {
     componentDidMount() {
         this.props.fetchCountries()
     }
     render() {
+       
         const countries = this.props.countries
         const loading = this.props.loading
         const isLoading = () => {
             console.log(loading)
-            if(loading == true){
+            if(loading === true){
                 return <h3>Loading...</h3>
             }else{
                 return countries.map(country =>{
@@ -28,6 +30,8 @@ class CountriesContainer extends Component {
             <div>
              In Countries Controller
              {isLoading()}
+             <CountryDetail countryProps={ countries }/>
+             {this.props.children}
             </div>
         );
     }
@@ -37,7 +41,7 @@ function mapDispatchToProps(dispatch){
     return { fetchCountries: () => dispatch(fetchCountries()) }
   }
   
-  function mapStateToProps(state){
+function mapStateToProps(state){
     return {countries: state.countries, loading: state.loading}
   }
 

@@ -1,19 +1,28 @@
 import React, { Component } from 'react';
+import CountriesContainer from './CountriesContainer';
 
 class CountryDetail extends Component {
-    render() {
+    constructor(props) {
+        super(props);
+        this.state = {
+        name: '',
+        flag: '',
+        capital: '',
+        region: '',
+        population: '',
+        timezones: '',
+        language: ''
+    }
+}
+    render(props) {
+        props = this.props.countryProps 
+        const countryList =this.props.countries
         return (
-            <div>
-                const countryDetails = this.props.countries
-                
-                  return 
-            return (
-                <div key={country.name}>
-                            <h2>{country.name}</h2>
-                            <Link to={"/country/"+country.name}>
-                            <img src={country.flag}></img>
-                            </Link>
-                        </div>
+            <div className='country-container'>
+            Inside CountryDetail
+            {this.props.children}  
+            {this.countryProps}
+            {countryList}
             </div>
         );
     }
