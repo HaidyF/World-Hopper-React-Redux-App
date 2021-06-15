@@ -11,8 +11,7 @@ import CountryDetail from './Components/CountryDetail'
 function App() {
   return (
     <div className="App">
-      <NavBar />
-      <Header />
+      
           <Router>
                 <header className="App-header">
                     <Switch>

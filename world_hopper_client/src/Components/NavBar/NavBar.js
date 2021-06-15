@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { NavLink } from 'reactstrap'
+import { NavLink as ReactLink} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import CountriesContainer from '../CountriesContainer';
 import Home from '../Home'
+import { NavItem } from 'react-bootstrap';
+import {Link} from 'react-router-dom';
+
 
 const link = {
   width: '100px',
@@ -16,21 +20,24 @@ class Navbar extends React.Component {
   render() {
     return (
       <div>
-        <Router>
-          <NavLink to="/"
+      
+      
+          <NavLink tag={ReactLink}
+          to="/"
             exact
             style={link}
             activeStyle={{
               background: 'hotpink'}}
           >Home</NavLink>
           
-          <NavLink to="/countries"
+          <NavLink tag={ReactLink}
+          to="/countries"
             style={link}
             activeStyle={{
               background: 'Purple'
             }}
           >Countries</NavLink>
-        </Router>
+
       </div>
     )
   }
