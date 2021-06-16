@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchCountries } from '../Actions/CountriesActions'
 import { Link } from 'react-router-dom'
-import CountryDetail from './CountryDetail'
 import NavBar from '../Components/NavBar/NavBar'
 class CountriesContainer extends Component {
     componentDidMount() {
@@ -32,7 +31,6 @@ class CountriesContainer extends Component {
             <NavBar />
              In Countries Controller
              {isLoading()}
-             <CountryDetail countryProps={ countries }/>
              {this.props.children}
             </div>
         );
