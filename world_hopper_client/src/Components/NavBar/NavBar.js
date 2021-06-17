@@ -1,11 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { NavLink } from 'reactstrap'
 import { NavLink as ReactLink} from 'react-router-dom';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import CountriesContainer from '../CountriesContainer';
-import Home from '../Home'
-import { NavItem } from 'react-bootstrap';
-import {Link} from 'react-router-dom';
 
 
 const link = {
@@ -37,6 +32,14 @@ class Navbar extends React.Component {
               background: 'Purple'
             }}
           >Countries</NavLink>
+
+          <NavLink tag={ReactLink}
+          to="/flashCards"
+            style={link}
+            activeStyle={{
+              background: 'green'
+            }}
+          >Flash Cards Game</NavLink>
 
       </div>
     )

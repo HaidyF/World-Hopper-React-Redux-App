@@ -3,6 +3,10 @@ import { connect } from 'react-redux';
 import { fetchCountries } from '../Actions/CountriesActions'
 import { Link } from 'react-router-dom'
 import NavBar from '../Components/NavBar/NavBar'
+import Header from './Header';
+import Footer from './Footer';
+
+  
 class CountriesContainer extends Component {
     componentDidMount() {
         this.props.fetchCountries()
@@ -12,15 +16,14 @@ class CountriesContainer extends Component {
         const countries = this.props.countries
         const loading = this.props.loading
         const isLoading = () => {
-            console.log(loading)
             if(loading === true){
                 return <h3>Loading...</h3>
             }else{
                 return countries.map(country =>{
-                  return <div key={country.name}>
+                  return <div key={country.name} style={{paddingRight:'50px'}}>
                             <h2>{country.name}</h2>
                             <Link to={"/country/"+country.name}>
-                            <img src={country.flag}></img>
+                            <img src={country.flag} alt={country.name} style={{width:'200px'}}></img>
                             </Link>
                         </div>
              })
@@ -29,13 +32,17 @@ class CountriesContainer extends Component {
         return (
             <div>
             <NavBar />
-             In Countries Controller
+            <Header />
+            <h1>Pick A Country</h1>
+            <div className="countries-div" style={{display:'flex',flexWrap:'wrap',justifyContent:'space-between'}}>
              {isLoading()}
-             {this.props.children}
+             </div>
+             <Footer />
             </div>
         );
     }
 }
+
 
 function mapDispatchToProps(dispatch){
     return { fetchCountries: () => dispatch(fetchCountries()) }
