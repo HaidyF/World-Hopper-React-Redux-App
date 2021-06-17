@@ -45,7 +45,7 @@ class Navbar extends React.Component {
           to="/travel"
             style={link}
             activeStyle={{
-              background: 'green'
+              background: 'blue'
             }}
           >Where To?</NavLink>
 

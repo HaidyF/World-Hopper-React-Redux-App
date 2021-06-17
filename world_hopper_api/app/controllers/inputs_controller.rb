@@ -21,7 +21,9 @@ class InputsController < ApplicationController
       @inputs = Input.all
       render json: @inputs
     else
-      render json: @input.errors, status: :unprocessable_entity
+      render json: {
+        errors: @input.errors.full_messages
+      }, status: :unprocessable_entity
     end
   end
 

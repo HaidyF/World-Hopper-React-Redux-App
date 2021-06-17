@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom'
 import NavBar from '../Components/NavBar/NavBar'
 import Header from './Header';
 import Footer from './Footer';
-
-  
 class CountriesContainer extends Component {
     componentDidMount() {
         this.props.fetchCountries()
@@ -32,8 +30,7 @@ class CountriesContainer extends Component {
         return (
             <div>
             <NavBar />
-            <Header />
-            <h1>Pick A Country</h1>
+            <h1>Pick A Country To Learn More About</h1>
             <div className="countries-div" style={{display:'flex',flexWrap:'wrap',justifyContent:'space-between'}}>
              {isLoading()}
              </div>

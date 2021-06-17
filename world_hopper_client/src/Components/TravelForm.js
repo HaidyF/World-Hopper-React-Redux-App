@@ -4,6 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import { addInput } from '../Actions/CountriesActions'
 import { connect } from 'react-redux'
+import ContainerImage from './ContainerImage';
 
 class TravelForm extends Component {
     state = {
@@ -60,8 +61,9 @@ class TravelForm extends Component {
         return (
         <div>
         <NavBar />
-        <Header />
-        <h1>In TravelForm</h1>
+        {/* <h1>In TravelForm</h1> */}
+        <h1> Tell Us Where You Would Like To Travel Next!</h1>
+        <ContainerImage />
                 <form onSubmit={this.handleSubmit}>
                     <label>Name: </label>
                     <input type='text' value={this.state.name} onChange={this.handleChange} name="name"/>
@@ -69,7 +71,7 @@ class TravelForm extends Component {
                     <label>Age: </label>
                     <input type='text' value={this.state.age} onChange={this.handleChange} name="age"/>
                     <br></br>
-                    <label>What country would you love to visit? </label>
+                    <label>What country would you want to visit? </label>
                     <input type='text' value={this.state.travel} onChange={this.handleChange} name="country"/>
                     <br></br>
                     <input type='submit' value="Submit"/>
