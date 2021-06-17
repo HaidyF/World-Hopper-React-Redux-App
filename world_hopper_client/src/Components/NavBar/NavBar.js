@@ -41,6 +41,15 @@ class Navbar extends React.Component {
             }}
           >Flash Cards Game</NavLink>
 
+          <NavLink tag={ReactLink}
+          to="/travel"
+            style={link}
+            activeStyle={{
+              background: 'green'
+            }}
+          >Where To?</NavLink>
+
+
       </div>
     )
   }

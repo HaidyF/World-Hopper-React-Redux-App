@@ -8,3 +8,23 @@ export const fetchCountries = () => {
         payload: countries }))
     }
 }
+
+export const addInput = (input) => {
+    console.log(JSON.stringify(input))
+    return (dispatch) => {
+        dispatch({ type: 'ADDING_INPUT'})
+    let configObj = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(input)  
+    }
+    fetch('http://localhost:4000/inputs',configObj)
+    .then(resp => resp.json())
+    .then(input => dispatch({
+        type: 'INPUT_ADDED',
+        payload: input
+    }))
+    }
+}
