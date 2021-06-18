@@ -60,7 +60,6 @@ class TravelForm extends Component {
         return (
         <div>
         <NavBar />
-        {/* <h1>In TravelForm</h1> */}
         <h1> Tell Us Where You Would Like To Travel Next!</h1>
         <ContainerImage />
                 <form onSubmit={this.handleSubmit}>
@@ -71,7 +70,7 @@ class TravelForm extends Component {
                     <input type='text' value={this.state.age} onChange={this.handleChange} name="age"/>
                     <br></br>
                     <label>What country would you want to visit? </label>
-                    <input type='text' value={this.state.travel} onChange={this.handleChange} name="country"/>
+                    <input type='text' value={this.state.country} onChange={this.handleChange} name="country"/>
                     <br></br>
                     <input type='submit' value="Submit"/>
                 </form>
@@ -79,14 +78,10 @@ class TravelForm extends Component {
         <Footer />
         </div>
         )
-}
+    }
 }
 function mapStateToProps(state){
-    return {inputs: state.inputs, loading: state.loading}
+    return { formEntries: state.formEntries, loading: state.loading }
   }
 
 export default connect(mapStateToProps, { addInput })(TravelForm);
-
-// function mapStateToProps(state){
-//     return {inputs   : state.inputs, loading: state.loading}
-//   }
