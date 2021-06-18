@@ -22,9 +22,13 @@ export const addInput = (input) => {
     }
     fetch('http://localhost:4000/inputs',configObj)
     .then(resp => resp.json())
-    .then(input => dispatch({
-        type: 'INPUT_ADDED',
-        payload: input
-    }))
+    .then(formEntry => { 
+            if(formEntry.status !== 400) {
+            return dispatch({
+            type: 'INPUT_ADDED',
+            payload: formEntry
+                })
+            }
+         })
     }
 }

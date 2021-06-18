@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { fetchCountries } from '../Actions/CountriesActions'
 import { Link } from 'react-router-dom'
 import NavBar from '../Components/NavBar/NavBar'
-import Header from './Header';
 import Footer from './Footer';
 class CountriesContainer extends Component {
     componentDidMount() {

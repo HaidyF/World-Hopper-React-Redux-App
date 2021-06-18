@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import NavBar from './NavBar/NavBar';
-import Header from './Header';
 import Footer from './Footer';
 import { addInput } from '../Actions/CountriesActions'
 import { connect } from 'react-redux'
@@ -39,20 +38,20 @@ class TravelForm extends Component {
     }
 
     render() {
-        let inputs = []
-        if (this.props.input != null){
-            inputs = this.props.inputs
-            console.log(inputs)
+        let formEntries = []
+        if (this.props.formEntries != null){
+            console.log(formEntries)
+            formEntries = this.props.formEntries[0]
         }
         
-        const loading = this.props.loading
+        const loading = false
         const isLoading = () => {
             if(loading === true){
                 return <h3>Loading...</h3>
             }else{
-                return inputs.map(input =>{
-                  return <div key={input.name} style={{paddingRight:'50px'}}>
-                            <h2>{input.name}</h2>
+                return formEntries.map(formEntry =>{
+                  return <div key={formEntry.name} style={{paddingRight:'50px'}}>
+                            <h2>{formEntry.name}</h2>
                         </div>
              })
             }
@@ -87,3 +86,7 @@ function mapStateToProps(state){
   }
 
 export default connect(mapStateToProps, { addInput })(TravelForm);
+
+// function mapStateToProps(state){
+//     return {inputs   : state.inputs, loading: state.loading}
+//   }

@@ -11,7 +11,7 @@ class ContainerImage extends Component {
     }
 }
 const imageStyle = {
-    img: 'border-radius: 8px;',
+    img: 'border-radius: 8px',
     opacity: '0.5'  
 }
 export default ContainerImage;

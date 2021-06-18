@@ -1,6 +1,6 @@
 export const CountriesReducer = (state = {
     countries: [],
-    inputs: [],
+    formEntries: [],
     loading: false
 }, action) => {
     switch(action.type){
@@ -11,10 +11,8 @@ export const CountriesReducer = (state = {
         case 'ADDING_INPUT':
             return {...state, loading: true}
         case 'INPUT_ADDED':
-            console.log(action.payload)
-
-            return {...state, inputs: [...state.inputs, action.payload], loading: false}
+            return {...state, formEntries: [...state.formEntries, action.payload], loading: false}
         default:
-                return state
+            return state
     }
 }
