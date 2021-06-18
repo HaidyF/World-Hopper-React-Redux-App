@@ -49,9 +49,9 @@ class TravelForm extends Component {
             if(loading === true){
                 return <h3>Loading...</h3>
             }else{
-                return formEntries.map(formEntry =>{
+                return formEntries && formEntries.map(formEntry =>{
                   return <div key={formEntry.name} style={{paddingRight:'50px'}}>
-                            <h2>{formEntry.name}</h2>
+                            <li>{formEntry.name}-{formEntry.age}-{formEntry.country}</li>
                         </div>
              })
             }
