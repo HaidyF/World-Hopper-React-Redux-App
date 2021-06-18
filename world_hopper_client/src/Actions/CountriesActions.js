@@ -32,3 +32,14 @@ export const addInput = (input) => {
          })
     }
 }
+
+export const fetchEntries = () => {
+    return (dispatch) => {
+    dispatch({ type: 'ENTRIES_LOADING' })
+    fetch('http://localhost:4000/inputs')
+    .then(resp => resp.json())
+    .then(formEntries => dispatch({ 
+        type: 'FETCH_ENTRIES', 
+        payload: formEntries }))
+    }
+}

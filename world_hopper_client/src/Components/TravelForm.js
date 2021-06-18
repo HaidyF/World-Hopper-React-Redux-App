@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NavBar from './NavBar/NavBar';
 import Footer from './Footer';
 import { addInput } from '../Actions/CountriesActions'
+// import { fetchEntries } from '../Actions/CountriesActions'
 import { connect } from 'react-redux'
 import ContainerImage from './ContainerImage';
 
@@ -80,8 +81,13 @@ class TravelForm extends Component {
         )
     }
 }
+
+// function mapDispatchToProps(dispatch){
+//     return { fetchEntries: () => dispatch(fetchEntries()) }
+// }
+
 function mapStateToProps(state){
     return { formEntries: state.formEntries, loading: state.loading }
-  }
+}
 
 export default connect(mapStateToProps, { addInput })(TravelForm);

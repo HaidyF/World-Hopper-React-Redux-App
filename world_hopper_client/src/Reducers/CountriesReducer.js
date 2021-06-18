@@ -12,6 +12,10 @@ export const CountriesReducer = (state = {
             return {...state, loading: true}
         case 'INPUT_ADDED':
             return {...state, formEntries: [...state.formEntries, action.payload], loading: false}
+        case 'ENTRIES_LOADING':
+            return { ...state, loading: true };
+        case 'FETCH_ENTRIES':
+            return { ...state, countries: action.payload, loading: false };
         default:
             return state
     }
