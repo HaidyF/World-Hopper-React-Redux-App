@@ -29,7 +29,7 @@ class CountriesContainer extends Component {
         return (
             <div>
             <NavBar />
-            <h1>Pick A Country To Learn More About</h1>
+            <h1 style={{color:'purple'}}>Pick A Country To Learn More About</h1>
             <div className="countries-div" style={{display:'flex',flexWrap:'wrap',justifyContent:'space-between'}}>
              {isLoading()}
              </div>

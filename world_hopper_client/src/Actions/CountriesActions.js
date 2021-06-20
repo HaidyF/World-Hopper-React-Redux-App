@@ -10,7 +10,6 @@ export const fetchCountries = () => {
 }
 
 export const addInput = (input) => {
-    console.log(JSON.stringify(input))
     return (dispatch) => {
         dispatch({ type: 'ADDING_INPUT'})
     let configObj = {

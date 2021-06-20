@@ -47,13 +47,9 @@ function Country() {
         );
 }
 const countryStyle = {
-    backgroundColor: '#282c34',
-    fontize: 'calc(80px + 2vmin)',
-    color: 'grey'
+    color: 'yellow'
 }
 const countryStyle2 = {
-    backgroundColor: '#282c34',
-    fontize: 'calc(80px + 2vmin)',
-    color: 'white'
+    color: 'purple'
 }
 export default Country;

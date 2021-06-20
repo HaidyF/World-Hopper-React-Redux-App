@@ -46,7 +46,7 @@ function FlashCard() {
           <div>
           <Navbar />
           <Header />
-             <h1> Let's Play!</h1>
+             <h1 style={{color:'orange'}}> Let's Play!</h1>
               {isLoading()}
               <Footer />
           </div>

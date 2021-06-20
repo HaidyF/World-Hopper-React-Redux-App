@@ -27,26 +27,7 @@ class InputsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /inputs/1
-  def update
-    if @input.update(input_params)
-      render json: @input
-    else
-      render json: @input.errors, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /inputs/1
-  def destroy
-    @input.destroy
-  end
-
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_input
-      @input = Input.find(params[:id])
-    end
-
+  
     # Only allow a list of trusted parameters through.
     def input_params
       params.require(:input).permit(:name, :age, :country)
